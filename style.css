@@ -1,97 +1,140 @@
-body{
-    font-family: 'Trebuchet MS', sans-serif;
-    background-color: pink;
-    color: deeppink;
+* {
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
     margin: 0;
+    background-color: #f1f5f9;
+    color: #1e293b;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 1rem;
     line-height: 1.6;
-
 }
 
-    h1,
-    h2,
-    h3 {
-        font-family: :Georgia, serif;
-    }
-
-    h1 {
-        font-size: 2.5rem;
-        letter-spacing: 1.px;
-    }
-    h2 {
-        font-size: 1.8rem;
-    }
-    h3{
-        font-size: 1.3rem;
-    }
-    p{
-        font-size: 1rem;
-        max-width: 700px;
-    }
-    main,
-    header,
-    nav,
-    footer{
-        padding: 20px;
-    }
-    header {
-        text-align: center;
-        padding: 50px 20px 30px;
-        background-color: antiquewhite;
-    }
-    header h1{
-        margin-bottom: 10px;
-        color: lightgoldenrodyellow;
-    }
-    header p {
-        margin: 0 auto;
-        font-size: 1.1rem;
-        color: bisque;
-
-    }
-    nav{
-        display: flex;
-        justify-content: centre;
-        gap: 25px;
-        padding: 15px;
-        background-color: rgb(184, 250, 228);
-        border-bottom: 1px solid #ead5df
-    }
-    nav a {
-        text-decoration: none;
-        color:fuchsia;
-        font-weight: bold;
-    }
-    nav a:hover {
-        color: #b76e8a;
-    }
-    section,
-    aside{
-        max-width: 900px;
-        margin:30px auto;
-        padding:30px;
-        background-color:#ffffff;
-        border-radius: 15px;
-    }
-    header img {
-        width: 160px;
-        height:160px;
-        object-fit: cover;
-        border-radius: 50%;
-        margin-bottom: 20px;
-    }
-    ul{
-        padding-left: 25px;
-    }
-
-    li{
-        margin-bottom: 8px;
-}
-form{
-    max-width: 600px;
-}
-label{
+img {
     display: block;
-    margin-top: 15px;
-    margin-bottom: 5px;
-    font-weight: bold;
+    max-width: 100%;
+}
+
+.profile-photo {
+    width: 9rem;
+    height: 9rem;
+    margin: 0 auto 1rem;
+    border: 4px solid #ffffff;
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+.page-content {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr);
+    gap: 1rem;
+    width: calc(100% - 2rem);
+    max-width: 72rem;
+    margin: 1.5rem auto;
+}
+
+.content-card {
+    min-width: 0;
+    padding: 1.25rem;
+    border: 1px solid #dbe3ee;
+    border-radius: 0.75rem;
+    background-color: #ffffff;
+    box-shadow: 0 2px 8px rgb(15 23 42 / 6%);
+}
+
+.content-card h2,
+.content-card h3 {
+    margin: 0 0 0.75rem;
+    color: #0f172a;
+    line-height: 1.25;
+}
+
+.content-card h2 {
+    font-size: 1.5rem;
+}
+
+.content-card h3 {
+    font-size: 1.125rem;
+}
+
+.content-card p {
+    margin: 0;
+}
+
+.skills-list {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(min(100%, 9rem), 1fr));
+    gap: 0.75rem;
+    margin: 1rem 0 0;
+    padding: 0;
+    list-style: none;
+}
+
+.skills-list li {
+    padding: 0.75rem;
+    border: 1px solid #cbd5e1;
+    border-radius: 0.5rem;
+    background-color: #f8fafc;
+}
+
+.site-footer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.25rem;
+    padding: 1.5rem 1rem;
+    background-color: #0f172a;
+    color: #f8fafc;
+    text-align: center;
+}
+
+.site-footer p {
+    margin: 0;
+}
+
+.site-footer a {
+    color: #bae6fd;
+    text-underline-offset: 0.2em;
+}
+
+.site-footer a:hover {
+    color: #ffffff;
+}
+
+@media (min-width: 48rem) {
+    .page-content {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 1.25rem;
+        margin-top: 2rem;
+        margin-bottom: 2rem;
+    }
+
+    .content-card {
+        padding: 1.5rem;
+    }
+
+    #contact {
+        grid-column: 1 / -1;
+    }
+
+    .site-footer {
+        flex-direction: row;
+        justify-content: space-between;
+        padding-right: max(2rem, calc((100% - 72rem) / 2));
+        padding-left: max(2rem, calc((100% - 72rem) / 2));
+        text-align: left;
+    }
+}
+
+@media (min-width: 80rem) {
+    .page-content {
+        gap: 1.5rem;
+        margin-top: 3rem;
+        margin-bottom: 3rem;
+    }
 }
